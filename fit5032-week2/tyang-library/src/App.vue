@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import JSON from './components/JSON.vue';
+import Form from './components/Form.vue';
 import TheWelcome from './components/TheWelcome.vue'
 </script>
 
@@ -11,6 +12,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
   <main>
     <JSON />
+    <Form />
   </main>
 </template>
 

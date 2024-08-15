@@ -5,11 +5,11 @@
         <h1>User Information Form</h1>
         <form @submit.prevent="submitForm">
           <div class="row mb-3">
-            <div class="col-md-6">
+            <div class="col-md-4">
               <label for="username" class="form-label">Username</label>
               <input type="text" class="form-control" id="username" v-model="formData.username" />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <label for="password" class="form-label">Password</label>
               <input
                 type="password"
@@ -17,6 +17,14 @@
                 id="password"
                 v-model="formData.password"
               />
+            </div>
+            <div class="col-md-4">
+              <label for="gender" class="form-label">Gender</label>
+              <select class="form-select" id="gender" v-model="formData.gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
             </div>
           </div>
           <div class="row mb-3">
@@ -31,14 +39,7 @@
                 <label class="form-check-label" for="isAustralian">Australian Resident?</label>
               </div>
             </div>
-            <div class="col-md-6">
-              <label for="gender" class="form-label">Gender</label>
-              <select class="form-select" id="gender" v-model="formData.gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+           
           </div>
           <div class="mb-3">
             <label for="reason" class="form-label">Reason for joining</label>

@@ -20,6 +20,7 @@ const submitForm = () => {
   validatePassword(true)
   if (!errors.value.username && !errors.value.password) {
     submittedCards.value.push({ ...formData.value })
+   localStorage.setItem('users', JSON.stringify(submittedCards.value))
     clearForm()
   }
 }
@@ -102,11 +103,7 @@ const validateReason = () => {
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <h1 class="text-center">🗄️ W4. Library Registration Form</h1>
-        <p class="text-center">
-          This form now includes validation. Registered users are displayed in a data table below
-          (PrimeVue).
-        </p>
+        <h1 class="text-center">🗄️ W5. Library Registration Form</h1>
         <form @submit.prevent="submitForm">
           <div class="row mb-3">
             <div class="col-md-6 col-sm-6">

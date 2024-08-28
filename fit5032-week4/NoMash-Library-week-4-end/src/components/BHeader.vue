@@ -12,10 +12,50 @@
         <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">About</router-link>
         </li>
+
+        <li class="nav-item" v-if="!isLoggedIn">
+          <router-link to="/login" class="nav-link" active-class="active">Login</router-link>
+        </li>
+
+        <li class="nav-item" v-if="isLoggedIn">
+          <router-link to="/logout" class="nav-link" active-class="active">Log out</router-link>
+        </li>
       </ul>
     </header>
   </div>
 </template>
+
+<script>
+import { ref, watch, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+export default {
+  setup() {
+    const isLoggedIn = ref(localStorage.getItem('isAuthenticated') === 'true');
+    const route = useRoute();
+
+    const checkAuthStatus = () => {
+      isLoggedIn.value = localStorage.getItem('isAuthenticated') === 'true';
+    };
+
+    // Watch for route changes and recheck authentication status
+    watch(route, () => {
+      checkAuthStatus();
+    });
+
+    // Optional: Check auth status when the component is mounted
+    onMounted(() => {
+      checkAuthStatus();
+    });
+
+    return {
+      isLoggedIn,
+    };
+  },
+};
+</script>
+
+
 <style scoped>
 .b-example-divider {
   height: 3rem;

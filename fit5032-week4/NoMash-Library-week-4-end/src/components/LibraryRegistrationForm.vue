@@ -9,7 +9,8 @@ const formData = ref({
   confirmPassword: '',
   isAustralian: false,
   reason: '',
-  gender: ''
+  gender: '',
+  suburb: 'Clayton'
 })
 
 const submittedCards = ref([])
@@ -87,14 +88,13 @@ const validateConfirmPassword = (blur) => {
 }
 
 const validateReason = () => {
-  const reasonText = formData.value.reason.toLowerCase();
+  const reasonText = formData.value.reason.toLowerCase()
   if (reasonText.includes('friend')) {
-    errors.value.reason = 'Great to have a friend';
+    errors.value.reason = 'Great to have a friend'
   } else {
-    errors.value.reason = null;
+    errors.value.reason = null
   }
 }
-
 </script>
 
 <template>
@@ -182,6 +182,12 @@ const validateReason = () => {
             ></textarea>
             <div v-if="errors.reason" class="text-success">{{ errors.reason }}</div>
           </div>
+
+          <div class="mb-3">
+            <label for="reason" class="form-label">Suburb</label>
+            <input type="text" class="form-control" id="suburb" v-bind:value="formData.suburb" />
+          </div>
+
           <div class="text-center">
             <button type="submit" class="btn btn-primary me-2">Submit</button>
             <button type="button" class="btn btn-secondary" @click="clearForm">Clear</button>

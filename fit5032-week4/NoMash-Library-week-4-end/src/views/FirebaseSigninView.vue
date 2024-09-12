@@ -1,0 +1,3 @@
+<template>
+    Firebase Login
+</template>

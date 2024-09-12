@@ -5,6 +5,7 @@ import LoginView from './LoginView.vue'
 import LogoutView from './LogoutView.vue'
 import FirebaseSigninView from './FirebaseSigninView.vue'
 import FirebaseRegisterView from './FirebaseRegisterView.vue'
+import FirebaseLogoutView from './FirebaseLogoutView.vue'
 
 const routes = [
   {
@@ -40,6 +41,11 @@ const routes = [
     path: '/FireLogin',
     name: 'FireLogin',
     component: FirebaseSigninView
+  },
+  {
+    path: '/FireLogout',
+    name: 'FireLogout',
+    component: FirebaseLogoutView
   },
   {
     path: '/FireRegister',

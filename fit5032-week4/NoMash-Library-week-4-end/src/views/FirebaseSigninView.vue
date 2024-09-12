@@ -19,7 +19,7 @@
     signInWithEmailAndPassword(auth, email.value, password.value)
       .then((data) => {
         console.log("Firebase Sign-in Successful!")
-        router.push("/Home") 
+        router.push("/") 
         console.log(auth.currentUser) 
       })
       .catch((error) => {

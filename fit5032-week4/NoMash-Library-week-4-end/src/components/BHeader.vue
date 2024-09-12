@@ -6,7 +6,7 @@
       <ul class="nav nav-pills">
         <li class="nav-item">
           <router-link to="/" class="nav-link" active-class="active" aria-current="page"
-            >Home (Week 5)</router-link
+            >Home</router-link
           >
         </li>
         <li class="nav-item">
@@ -14,16 +14,9 @@
         </li>
 
         <li class="nav-item" v-if="!isLoggedIn">
-          <router-link to="/login" class="nav-link" active-class="active">Login</router-link>
-        </li>
-
-        <li class="nav-item" v-if="isLoggedIn">
-          <router-link to="/logout" class="nav-link" active-class="active">Log out</router-link>
-        </li>
-
-        <li class="nav-item">
           <router-link to="/Firelogin" class="nav-link" active-class="active">Firebase Login</router-link>
         </li>
+
 
         <li class="nav-item">
           <router-link to="/FireRegister" class="nav-link" active-class="active">Firebase Register</router-link>

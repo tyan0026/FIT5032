@@ -6,6 +6,7 @@ import LogoutView from './LogoutView.vue'
 import FirebaseSigninView from './FirebaseSigninView.vue'
 import FirebaseRegisterView from './FirebaseRegisterView.vue'
 import FirebaseLogoutView from './FirebaseLogoutView.vue'
+import AddBookView from './AddBookView.vue'
 
 const routes = [
   {
@@ -16,16 +17,12 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: AboutView,
-    beforeEnter: (to, from, next) => {
-      // Perform logic before entering the About route
-      if (localStorage.getItem('isAuthenticated')) {
-        next()
-      } else {
-        window.alert('Please login first. ')
-        next(false) // Cancel the navigation
-      }
-    }
+    component: AboutView
+  },
+  {
+    path: '/addbook',
+    name: 'AddBook',
+    component: AddBookView
   },
   {
     path: '/login',

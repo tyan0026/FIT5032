@@ -6,6 +6,8 @@
         <ul>
             <li v-for="book in books" :key="book.id">
                 {{ book.name }} - ISBN: {{ book.isbn }}
+
+                <button @click="deleteBook(book.id)">Delete</button>
             </li>
         </ul>
     </div>
@@ -14,7 +16,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 import db from '../firebase/init.js';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, doc, deleteDoc } from 'firebase/firestore';
 
 export default {
   setup() {
@@ -34,12 +36,23 @@ export default {
       }
     };
 
+    const deleteBook = async (id) => {
+      try {
+        await deleteDoc(doc(db, 'books', id));  
+        books.value = books.value.filter(book => book.id !== id);  
+        alert('Book deleted successfully!');
+      } catch (error) {
+        console.error('Error deleting books: ', error);
+      }
+    };
+
     onMounted(() => {
       fetchBooks();
     });
 
     return {
-      books
+      books,
+      deleteBook
     };
   }
 };

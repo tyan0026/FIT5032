@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from './homeView.vue'
+import HomeView from './HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from './LoginView.vue'
 import LogoutView from './LogoutView.vue'
@@ -7,6 +7,7 @@ import FirebaseSigninView from './FirebaseSigninView.vue'
 import FirebaseRegisterView from './FirebaseRegisterView.vue'
 import FirebaseLogoutView from './FirebaseLogoutView.vue'
 import AddBookView from './AddBookView.vue'
+import GetBookCountView from './GetBookCountView.vue'
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: '/FireLogout',
     name: 'FireLogout',
     component: FirebaseLogoutView
+  },
+  {
+    path: '/GetBookCount',
+    name: 'GetBookCount',
+    component: GetBookCountView
   },
   {
     path: '/FireRegister',

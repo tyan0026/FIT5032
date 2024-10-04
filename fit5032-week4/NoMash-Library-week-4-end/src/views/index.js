@@ -9,6 +9,7 @@ import FirebaseLogoutView from './FirebaseLogoutView.vue'
 import AddBookView from './AddBookView.vue'
 import GetBookCountView from './GetBookCountView.vue'
 import WeatherView from './WeatherView.vue'
+import CountBookAPI from './CountBookAPI.vue'
 
 const routes = [
   {
@@ -55,6 +56,11 @@ const routes = [
     path: '/WeatherCheck',
     name: 'WeatherCheck',
     component: WeatherView
+  },
+  {
+    path: '/CountBookAPI',
+    name: 'CountBookAPI',
+    component: CountBookAPI
   },
   {
     path: '/FireRegister',

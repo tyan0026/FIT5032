@@ -29,6 +29,10 @@
           <router-link to="/Firelogout" class="nav-link" active-class="active">Firebase Logout</router-link>
         </li>
 
+        <li class="nav-item" >
+          <router-link to="/WeatherCheck" class="nav-link" active-class="active">Get Weather</router-link>
+        </li>
+
         <li class="nav-item">
           <router-link to="/FireRegister" class="nav-link" active-class="active">Firebase Register</router-link>
         </li>
